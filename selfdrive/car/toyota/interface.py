@@ -142,7 +142,8 @@ class CarInterface(CarInterfaceBase):
       tire_stiffness_factor = 0.7933
       ret.mass = 3585. * CV.LB_TO_KG + STD_CARGO_KG  # Average between ICE and Hybrid
       if Params().get_bool('Torque'):
-        set_torque_tune(ret.lateralTuning, torque_params['LAT_ACCEL_FACTOR'], torque_params['FRICTION'], steering_angle_deadzone_deg)
+        #set_torque_tune(ret.lateralTuning, torque_params['LAT_ACCEL_FACTOR'], torque_params['FRICTION'], steering_angle_deadzone_deg)
+        set_torque_tune(ret.lateralTuning, 2.803624333289342, 0.061, steering_angle_deadzone_deg)
       else:
         set_lat_tune(ret.lateralTuning, LatTunes.INDI_RAV4_TSS2)
 
